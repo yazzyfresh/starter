@@ -10,7 +10,12 @@ server.on('request', (req, res) => {
 
     //Soulution 2 Streams
     const readable = fs.createReadStream('test-file.txt');
-    readable.pipe(res);
+    readable.on('data', (chunk) => {
+        res.write(chunk);
+    });
+    readable.on('end', () => {
+        res.end();
+    });
 
 });
 server.listen (8000, '127.0.0.1', () => {
