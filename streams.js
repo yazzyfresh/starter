@@ -3,7 +3,7 @@ const server  = require('http').createServer();
 
 server.on('request', (req, res) => {
     //Soulution 1
-    fs.readFile('input.txt', (err, data) => {
+    fs.readFile('test-file.txt', (err, data) => {
         if (err) console.log(err);
         res.end(data);
     });
