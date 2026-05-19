@@ -23,6 +23,12 @@ server.on("request", (req, res) => {
 //   });
 // 
 
+//Soulution 3 
+    const readable = fs.createReadStream("test-file.txt");
+    readable.pipe(res);
+    // readableSource.pipe(writableDestination);
+    
+
 });
 
 
